@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
 
 * {
   padding: 0;
@@ -8,7 +8,7 @@
 body {
   background: #242a32;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: "Montserrat", sans-serif;
 }
 header {
@@ -24,7 +24,6 @@ header h1 {
 .search-bar {
   align-items: center;
   width: 100%;
-  height: 80vh;
   padding: 20px 40px;
 }
 .search-bar .api,
@@ -45,4 +44,48 @@ header h1 {
   background-color: transparent;
   border: none;
   outline: none;
+}
+.movies-list {
+  padding: 10px 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.movie-card {
+  padding: 10px;
+  position: relative;
+  width: 200px;
+}
+.movie-card img {
+  width: 100%;
+  position: relative;
+  left: 20px;
+}
+.name {
+  display: flex;
+  top: 120px;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+.movie-card .index {
+  position: relative;
+  font-size: 8rem;
+  left: 0px;
+  bottom: 210px;
+  -webkit-text-stroke: 0.5px #0296e5;
+  -webkit-text-fill-color: #242a32;
+}
+.movie-card .title {
+  font-size: 16px;
+  position: relative;
+  color: white;
+  left: 15px;
+  bottom: 150px;
+  font-style: "Poppins", sans-serif;
+  font-weight: 700;
+  /* word-wrap: break-word; */
 }
