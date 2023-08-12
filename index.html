@@ -13,11 +13,17 @@
     />
     <title>Movie App</title>
   </head>
-  <body>
+  <body onload="loadMovies()">
     <header><h1>IMDB MOVIE APP</h1></header>
     <section class="search-bar">
       <div class="api">
-        <input placeholder="API_KEY" type="text" name="api" id="api" /><span>
+        <input
+          value="31f6d050"
+          placeholder="API_KEY"
+          type="text"
+          name="api"
+          id="api"
+        /><span>
           <svg
             width="15"
             height="15"
@@ -41,6 +47,7 @@
           type="text"
           name="search"
           id="search"
+          onkeyup="findMovies()"
         /><span>
           <svg
             width="15"
@@ -71,48 +78,43 @@
         </span>
       </div>
     </section>
-    <section class="movies-list">
-      <div class="movie-card">
-        <img
-          src="https://yourfilmposter.com/cdn/shop/products/spacefight.webp?v=1689602062&width=550"
-          alt="Poster"
-        />
-        <div class="name">
-          <div class="index">1</div>
-          <div class="title">Movie ksjdfn kfnsjdfn skdfjnkfjn</div>
-        </div>
+    <section class="dashboard">
+      <div class="loader hide" id="loader">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
       </div>
-      <div class="movie-card">
-        <img
-          src="https://yourfilmposter.com/cdn/shop/products/spacefight.webp?v=1689602062&width=550"
-          alt="Poster"
-        />
-        <div class="name">
-          <div class="index">2</div>
-          <div class="title">Movie ksjdfn kfnsjdfn skdfjnkfjn</div>
+
+      <div class="movies-list" id="movie-list"></div>
+
+      <section class="page_404 hide" id="error">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="col-sm-10 col-sm-offset-1 text-center">
+                <div class="four_zero_four_bg">
+                  <h1 class="text-center">404</h1>
+                </div>
+
+                <div class="contant_box_404">
+                  <h3 class="h2">Look like you're lost</h3>
+
+                  <p>the Movie you are looking for not available!</p>
+
+                  <a href="#" class="link_404">Search Again</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="movie-card">
-        <img
-          src="https://yourfilmposter.com/cdn/shop/products/spacefight.webp?v=1689602062&width=550"
-          alt="Poster"
-        />
-        <div class="name">
-          <div class="index">3</div>
-          <div class="title">Movie ksjdfn kfnsjdfn skdfjnkfjn</div>
-        </div>
-      </div>
-      <div class="movie-card">
-        <img
-          src="https://yourfilmposter.com/cdn/shop/products/spacefight.webp?v=1689602062&width=550"
-          alt="Poster"
-        />
-        <div class="name">
-          <div class="index">4</div>
-          <div class="title">Movie ksjdfn kfnsjdfn skdfjnkfjn</div>
-        </div>
-      </div>
+      </section>
     </section>
+
     <script src="./script.js"></script>
   </body>
 </html>
