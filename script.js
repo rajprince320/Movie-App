@@ -4,6 +4,7 @@ let loader = document.getElementById("loader");
 let apiKey = "31f6d050";
 
 async function loadMovies(searchInput, api) {
+  check();
   let search = "bollywood";
   let apiKey = document.getElementById("api").value;
   const res = await fetch(
@@ -14,16 +15,23 @@ async function loadMovies(searchInput, api) {
     .then(async (res) => {
       const data = await res.json();
 
-      for (let i = 0; i < data.Search.length; i++) {
-        makeCard(data.Search[i], i);
+      if (data.Response === "True") {
+        for (let i = 0; i < data.Search.length; i++) {
+          makeCard(data.Search[i], i);
+        }
+      } else {
+        document.getElementById("loader").classList.remove("hide");
       }
     })
-    .catch((err) => {
-      //   alert(err);
-      document.getElementById("loader").classList.remove("hide");
+    .catch(() => {
+      document.getElementById("error").classList.remove("hide");
     });
 }
-
+function check() {
+  if (container !== null) {
+    document.getElementById("loader").classList.add("hide");
+  }
+}
 function findMovies() {
   let search = searchBox.value;
   let apiKey = document.getElementById("api").value;
@@ -40,7 +48,11 @@ function makeCard(data, i) {
   const card = document.createElement("div");
   card.className = "movie-card";
   let myCard = `
-      <div class="movie-card" id="movie-card">
+      <div class="movie-card" target="_blank" id="movie-card" onclick="location.href = 'https://www.imdb.com/title/${
+        data.imdbID
+      }'"
+      }
+      }" >tar
         <img
           src="${
             data.Poster === "N/A"
