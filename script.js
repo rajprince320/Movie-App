@@ -5,7 +5,7 @@ let apiKey = "31f6d050";
 
 async function loadMovies(searchInput, api) {
   check();
-  let search = "bollywood";
+  let search = "indian";
   let apiKey = document.getElementById("api").value;
   const res = await fetch(
     `http://www.omdbapi.com/?i=tt3896198&page=1&apikey=${
@@ -52,7 +52,7 @@ function makeCard(data, i) {
         data.imdbID
       }'"
       }
-      }" >tar
+      }" >
         <img
           src="${
             data.Poster === "N/A"
