@@ -190,7 +190,7 @@ header h1 {
   border-radius: 10px;
 }
 
-.contant_box_404 {
+.content_box_404 {
   margin-top: -50px;
 }
 
@@ -207,7 +207,7 @@ header h1 {
 @keyframes loader {
   0% {
     transform: scaleY(0.1);
-    background: ;
+    background: transparent;
   }
   50% {
     transform: scaleY(1);
