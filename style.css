@@ -72,9 +72,12 @@ header h1 {
   transition: all 0.4s ease;
 }
 .movie-card img {
+  height: 250px;
   width: 100%;
   position: relative;
   left: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 15px black;
 }
 .name {
   display: flex;
