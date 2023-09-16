@@ -8,9 +8,9 @@ async function loadMovies(searchInput, api) {
   let search = "indian";
   let apiKey = document.getElementById("api").value;
   const res = await fetch(
-    `http://www.omdbapi.com/?i=tt3896198&page=1&apikey=${
-      !api ? apiKey : api
-    }&s=${!searchInput ? search : searchInput}`
+    `https://www.omdbapi.com/?apikey=${!api ? apiKey : api}&s=${
+      !searchInput ? search : searchInput
+    }`
   )
     .then(async (res) => {
       const data = await res.json();
