@@ -1,7 +1,7 @@
 let searchBox = document.getElementById("search");
 let container = document.getElementById("movie-list");
 let loader = document.getElementById("loader");
-let apiKey = "31f6d050";
+let apiKey = "5f99d15c";
 
 async function loadMovies(searchInput, api) {
   check();
